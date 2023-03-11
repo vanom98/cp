@@ -4,13 +4,14 @@ using namespace std;
 //calculate a^b mod 10^9+7
 //1101
 //a*(a^2)*(a^8)
-int binary_expon(int a ,int b ,int mod){
-    int ans =1;
+using lli=long long int;
+int binary_expon(lli a ,lli b ,lli mod){
+    lli ans =1;
     while(b){
         if(b%2==1){
-            ans=(1LL*ans*a)%mod;
+            ans=(ans*a)%mod;
         }
-        a=(1LL*a*a)%mod;
+        a=(a*a)%mod;
         b=b/2;
     }
     return ans;
